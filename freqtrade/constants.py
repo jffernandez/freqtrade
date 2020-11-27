@@ -24,7 +24,7 @@ HYPEROPT_LOSS_BUILTIN = ['ShortTradeDurHyperOptLoss', 'OnlyProfitHyperOptLoss',
                          'SharpeHyperOptLoss', 'SharpeHyperOptLossDaily',
                          'SortinoHyperOptLoss', 'SortinoHyperOptLossDaily']
 AVAILABLE_PAIRLISTS = ['StaticPairList', 'VolumePairList',
-                       'AgeFilter', 'PrecisionFilter', 'PriceFilter',
+                       'AgeFilter', 'PrecisionFilter', 'PriceFilter', 'TrendFilter',
                        'RangeStabilityFilter', 'ShuffleFilter', 'SpreadFilter']
 AVAILABLE_DATAHANDLERS = ['json', 'jsongz', 'hdf5']
 DRY_RUN_WALLET = 1000
