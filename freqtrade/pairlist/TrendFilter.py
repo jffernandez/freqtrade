@@ -126,7 +126,7 @@ class TrendFilter(IPairList):
                                                     timeframe=self._timeframe,
                                                     since_ms=since_ms)
 
-        if candles is not None:
+        if candles and len(candles) == self._total_periods:
             # convert to dataframe
             dataframe = ohlcv_to_dataframe(candles, self._timeframe, pair=ticker['symbol'], drop_incomplete=True)
             # populate ema indicator
@@ -144,7 +144,7 @@ class TrendFilter(IPairList):
                 self._symbolsCache[ticker['symbol']] = cache_data
             return result
 
-        self.log_on_refresh(logger.info, f"Could not get data for {ticker['symbol']}.")
+        self.log_on_refresh(logger.info, f"Could not get enough data for {ticker['symbol']}.")
         return False
 
     def _get_ticker_trend(self, dataframe: DataFrame) -> str:
